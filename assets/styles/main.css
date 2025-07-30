@@ -48,7 +48,8 @@
 breadcrumb maker (IN PROGRESS) */
 
 h1 {
-    font-family: "Roboto Flex", weight 400, sans-serif;
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 400;
     font-size: 2em;
     margin-bottom: 0.5em;
     font-variant: normal;

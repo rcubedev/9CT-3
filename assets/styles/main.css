@@ -1,0 +1,56 @@
+/*
+// <weight>: Use a value from 100 to 1000
+// <uniquifier>: Use a unique and descriptive class name
+*/
+
+.roboto-flex-unique { /* standard font*/
+  font-family: "Roboto Flex", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "wdth" 100,
+    "GRAD" 0,
+    "XOPQ" 96,
+    "XTRA" 468,
+    "YOPQ" 79,
+    "YTAS" 750,
+    "YTDE" -203,
+    "YTFI" 738,
+    "YTLC" 514,
+    "YTUC" 712;
+}
+
+/* breadcrumb maker (IN PROGRESS)
+.breadcrumb {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    padding: 0;
+}
+.breadcrumb li {
+    display: flex;
+    align-items: center;
+}
+.breadcrumb li:not(:last-child)::after {
+    content: ">";
+    margin: 0 8px;
+    color: #888;
+}
+.breadcrumb a {
+    text-decoration: none;
+    color: #007bff;
+}
+.breadcrumb li:last-child {
+    color: #555;
+}
+breadcrumb maker (IN PROGRESS) */
+
+h1 {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 400;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    font-variant: normal;
+}

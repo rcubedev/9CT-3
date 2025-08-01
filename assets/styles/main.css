@@ -3,6 +3,11 @@
 // <uniquifier>: Use a unique and descriptive class name
 */
 
+:root {
+    color: #ffffff; /* default text color */
+    background-color: #000000; /* default background color */
+}
+
 .roboto-flex-unique { /* standard font*/
   font-family: "Roboto Flex", sans-serif;
   font-optical-sizing: auto;
@@ -61,14 +66,14 @@ p{
     font-size: 1em;
     line-height: 1.5;
     margin-bottom: 1em;
-    color: #333;
+    color: #fff;
 }
 
 .navbar {
     list-style: none;
     display: flex;
     gap: 20px;
-    background: #222;
+    background: #000000;
     padding: 10px 20px;
     margin: 0;
 }

@@ -54,3 +54,33 @@ h1 {
     margin-bottom: 0.5em;
     font-variant: normal;
 }
+
+p{
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    color: #333;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    background: #222;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.navbar li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.navbar li a:hover {
+    background: #444;
+}

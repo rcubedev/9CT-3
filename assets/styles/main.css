@@ -3,6 +3,11 @@
 // <uniquifier>: Use a unique and descriptive class name
 */
 
+:root {
+    color: #ffffff; /* default text color */
+    background-color: #000000; /* default background color */
+}
+
 .roboto-flex-unique { /* standard font*/
   font-family: "Roboto Flex", sans-serif;
   font-optical-sizing: auto;
@@ -53,4 +58,34 @@ h1 {
     font-size: 2em;
     margin-bottom: 0.5em;
     font-variant: normal;
+}
+
+p{
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 1em;
+    color: #fff;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    background: #000000;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.navbar li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.navbar li a:hover {
+    background: #444;
 }

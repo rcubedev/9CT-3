@@ -1,15 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./assets/styles/main.css">
         <link rel="stylesheet" href="./assets/fonts/font-awesome/css/all.min.css">
+        <link rel="stylesheet" href="./assets/styles/tailwind-recreate.css">
+        <link rel="stylesheet" href="./assets/styles/main.css">
     </head>
-    <body>
-        <script src="" async defer></script>
+    <body class="bg-gray-50">
+        <!-- Navigation -->
+        <nav class="bg-white shadow-lg sticky top-0 z-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between">
+                    <div class="flex">
+                        <div>
+                            <a href="./index.html" class="flex items-center py-4 px-2">
+                                <i class="fas fa-gamepad text-blue-500 text-2xl mr-2"></i>
+                                <span class="font-semibold text-gray-900 text-lg">PHS Scratch Games</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- primary nav -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#[placeholder]" class="nav-link active py-4 px-2 text-blue-500 font-medium">Home</a>
+                        <a href="#[placeholder]" class="nav-link py-4 px-2 text-gray-500 hover:text-blue-500 font-medium">[placeholder]</a>
+                        <a href="#[placeholder]" class="nav-link py-4 px-2 text-gray-500 hover:text-blue-500 font-medium">[placeholder]</a>
+                        <a href="#[placeholder]" class="nav-link py-4 px-2 text-gray-500 hover:text-blue-500 font-medium">[placeholder]</a>
+                        <a href="#[placeholder]" class="nav-link py-4 px-2 text-gray-500 hover:text-blue-500 font-medium">[placeholder]</a>
+                    </div>
+                    <!-- mobile button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="outline-none mobile-menu-button w-6 h-6">
+                            <svg class="w-6 h-6 text-gray-500" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="hidden mobile-menu md:hidden">
+                <ul class="">
+                    <li><a href="#[placeholder]" class="block text-sm px-2 py-4 text-white bg-blue-500 font-semibold">Home</a></li>
+                    <li><a href="#[placeholder]" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300">[placeholder]</a></li>
+                    <li><a href="#[placeholder]" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300">[placeholder]</a></li>
+                    <li><a href="#[placeholder]" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300">[placeholder]</a></li>
+                    <li><a href="#[placeholder]" class="block text-sm px-2 py-4 hover:bg-gray-100 transition duration-300">[placeholder]</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <main>
+            <div id="placeholder" class="page py-12 px-4 md:px-0 fade-in">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Welcome to [placeholder: company name]</h1>
+                        <p class="text-xl text-gray-600">[placeholder: description]</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mx-auto">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden game-card">
+                            <img src="./assets/img/[placeholder].png" alt="[placeholder: game name]" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">[placeholder: game name]</h3>
+                                <p class="text-gray-600 mb-4">[placeholder: game name]</p>
+                                <a href="#[placeholder]" class="text-blue-500 font-medium hover:text-blue-700">Learn more →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden game-card">
+                            <img src="./assets/img/[placeholder].png" alt="[placeholder: game name]" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">[placeholder: game name]</h3>
+                                <p class="text-gray-600 mb-4">[placeholder: game name]</p>
+                                <a href="#[placeholder]" class="text-blue-500 font-medium hover:text-blue-700">Learn more →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden game-card">
+                            <img src="./assets/img/[placeholder].png" alt="[placeholder: game name]" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">[placeholder: game name]</h3>
+                                <p class="text-gray-600 mb-4">[placeholder: game name]</p>
+                                <a href="#[placeholder]" class="text-blue-500 font-medium hover:text-blue-700">Learn more →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden game-card">
+                            <img src="./assets/img/[placeholder].png" alt="[placeholder: game name]" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 mb-2">[placeholder: game name]</h3>
+                                <p class="text-gray-600 mb-4">[placeholder: game name]</p>
+                                <a href="#[placeholder]" class="text-blue-500 font-medium hover:text-blue-700">Learn more →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        <script src="./assets/scripts/main.js" async defer></script>
     </body>
-</html>
+</html> 

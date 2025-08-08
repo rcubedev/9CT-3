@@ -24,15 +24,15 @@ btn.addEventListener("click", () => {
             
 //             // Update active nav link
 //             document.querySelectorAll('.nav-link').forEach(link => {
-//                 link.classList.remove('active', 'text-blue-500');
-//                 link.classList.add('text-gray-500');
+//                 link.classList.remove('active', 'color-blue-500');
+//                 link.classList.add('color-gray-500');
 //             });
             
 //             if (targetId !== '#home') {
-//                 this.classList.add('active', 'text-blue-500');
-//                 this.classList.remove('text-gray-500');
+//                 this.classList.add('active', 'color-blue-500');
+//                 this.classList.remove('color-gray-500');
 //             } else {
-//                 document.querySelector('.nav-link[href="#home"]').classList.add('active', 'text-blue-500');
+//                 document.querySelector('.nav-link[href="#home"]').classList.add('active', 'color-blue-500');
 //             }
 
 //             // Close mobile menu if open

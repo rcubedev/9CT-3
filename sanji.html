@@ -27,7 +27,7 @@
                 background-color: rgb(225, 221, 221);
                 border-radius: 10px;
             }
-            img {
+            img.img_1 {
                 width: 40%;
                 height: 350px;
                 float: left;
@@ -35,10 +35,37 @@
                 align-items: left;
                 margin-left: 40px;
                 margin-top: 20px;
-                border-radius: 10px;}
+                border-radius: 10px;
+            }
+            .img-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-left: 4px;
+                margin-top: 20px;
+                gap: 20px;
+            }
 
-            p{ text-align: center;
-                font-size: 25px;
+            img.img_2,
+            img.img_3,
+            img.img_4 {
+                width: 300px;
+                height: 250px;
+                object-fit: cover;
+                border-radius: 10px;
+                margin: 0;
+                display: inline-block;
+                vertical-align: top;
+            }
+            .image-row {
+                display: flex;
+                gap: 10px; /* optional: adds space between images */
+            }
+
+            p{ 
+                text-align: center;
+                font-size: 30px;
                 margin-left: 40px;
                 margin-right: 40px;
                 margin-top: 20px;
@@ -47,16 +74,17 @@
                 font-family: "Bitcount Prop Single", system-ui;  
             }
 
-            .bitcount-prop-single-<uniquifier> {
-                font-family: "Bitcount Prop Single", system-ui;
-                font-optical-sizing: auto;
-                font-weight: <weight>;
-                font-style: normal;
-                font-variation-settings:
-                    "slnt" 0,
-                    "CRSV" 0.5,
-                    "ELSH" 0,
-                    "ELXP" 0;  
+            /* Example class for Bitcount Prop Single font */
+            .bitcount-prop-single {
+            font-family: "Bitcount Prop Single", system-ui;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+                "slnt" 0,
+                "CRSV" 0.5,
+                "ELSH" 0,
+                "ELXP" 0;  
             }
         </style>
     </head>
@@ -64,15 +92,18 @@
         <h1>Younger Ring</h1> 
     
         <h2>The Game that warped minds</h2>
-        <img src=".\assets\img\webpagepic.png" alt="Younger Ring Game menu screen" style="display: block; margin-left: auto; margin-right: auto;">
-        <!-- [if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif] -->       
+        <a href="https://scratch.mit.edu/projects/1148046887/fullscreen/" target="_blank">
+        <img class="img_1" src="./assets/img/webpagepic.png" alt="Younger Ring Game menu screen" style="display: block; margin-left: auto; margin-right: auto;">
+        </a>      
         
         <script src="" async defer></script>
         <p>
-            <break>This fast paced learning game offers you a total of 15 engaging questions that challenge your knowledge in categories like cyber security,</break> data privacy and digital citizenship. With smooth and intuitive gameplay, you will be clicking your way through each round without pause. The game is created to keep your brain sharp as it tests what you know while teaching you new facts along the way. You can't drop out halfway, the momentum takes you right through to the end. Whether you're playing for fun or developing your skills, this game makes learning enjoyable, entertaining, and rewarding. Great for students or anyone who wishes to learn more.
-
+            This game is made in Scratch and inspired by Elden Ring. Players fight bosses across three levels with rising difficulty. Each stage has its own background and enemy style. Controls are simple, using arrow keys to move and space to attack. A chip power-up restores health during battle. The menu and instructions help new players start quickly. The game rewards skill, timing and learning enemy moves.
         </p>
+        <div class="image-row">
+            <img class="img_2" src="./assets/img/screenshot2.png" alt="level one">
+            <img class="img_3" src="./assets/img/screenshot3.png" alt="level two">
+            <img class="img_4" src="./assets/img/screenshot4.png" alt="victory">
+        </div>
     </body>
 </html>

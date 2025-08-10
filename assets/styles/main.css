@@ -13,7 +13,7 @@ h2{
     background-color: rgb(225, 221, 221);
     border-radius: 10px;
 }
-img {
+img.img_1 {
     width: 40%;
     height: 350px;
     float: left;
@@ -21,22 +21,50 @@ img {
     align-items: left;
     margin-left: 40px;
     margin-top: 20px;
-    border-radius: 10px;}
+    border-radius: 10px;
+}
+.img-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 4px;
+    margin-top: 20px;
+    gap: 20px;
+}
 
- p{ text-align: center;
-    font-size: 25px;
+img.img_2,
+img.img_3,
+img.img_4 {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0;
+    display: inline-block;
+    vertical-align: top;
+}
+.image-row {
+    display: flex;
+    gap: 10px; /* optional: adds space between images */
+}
+
+p{ 
+    text-align: center;
+    font-size: 30px;
     margin-left: 40px;
     margin-right: 40px;
     margin-top: 20px;
     margin-bottom: 20px;
     height: 350px;
     font-family: "Bitcount Prop Single", system-ui;  
-    }
+}
 
-.bitcount-prop-single-<uniquifier> {
+/* Example class for Bitcount Prop Single font */
+.bitcount-prop-single {
   font-family: "Bitcount Prop Single", system-ui;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 400;
   font-style: normal;
   font-variation-settings:
     "slnt" 0,

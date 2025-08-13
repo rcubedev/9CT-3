@@ -327,9 +327,17 @@
     }
 }
 .hero__buttons {
-    > * + * {
-        margin-left: var(--space-x-1);
+    display: var(--flex);
+    flex-wrap: var(--wrap); /* needs to be replaced with a variable */
+    gap: var(--gap-2);
+    flex-direction: column; /* needs to be replaced with a variable */
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        gap: var(--gap-2);
     }
+}
+.hero__buttons--button {
+    justify-content: center;
 }
 
 /* ... */

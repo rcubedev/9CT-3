@@ -205,10 +205,13 @@
 
 .section-blue {
     background-color: var(--bg-blue-50);
+    max-width: var(--max-width-4xl);
     border-radius: var(--round-lg);
     padding: var(--pad-8);
     text-align: var(--text-center);
     margin-top: var(--margin_top-12);
+    margin-left: var(--margin_x-auto);
+    margin-right: var(--margin_x-auto);
 }
 .section-blue--heading {
     color: var(--color-gray-800);

@@ -16,19 +16,18 @@
         <!-- Navigation -->
         <nav class="nav">
             <div class="nav__container">
-                <a href="./index.html" class="nav__logo">
+                <a href="#" class="nav__logo"> <!-- Change href to ./index.html if not on main page. -->
                     <span class="nav__logo--img fa-solid fa-gamepad"></span>
                     <span class="nav__logo--text">[placeholder]</span>
                 </a>
-                <!-- primary nav -->
+                <!-- Desktop (>=768px) -->
                 <div class="nav__primary">
-                    <a href="#[placeholder: link]" class="nav__primary--link nav-link active">Home</a>
-                    <a href="#[placeholder: link]" class="nav__primary--link nav-link">[placeholder]</a>
+                    <a href="#" class="nav__primary--link nav-link active">Home</a> <!-- Change href to ./index.html if not on main page. -->
                     <a href="#[placeholder: link]" class="nav__primary--link nav-link">[placeholder]</a>
                     <a href="#[placeholder: link]" class="nav__primary--link nav-link">[placeholder]</a>
                     <a href="#[placeholder: link]" class="nav__primary--link nav-link">[placeholder]</a>
                 </div>
-                <!-- mobile button -->
+                <!-- button for mobile -->
                 <div class="nav__mobile-button">
                     <button class="mobile-menu-button nav__mobile-button__button">
                         <svg class="nav__mobile-button__button--img" x-show="!showMenu" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
@@ -37,11 +36,10 @@
                     </button>
                 </div>
             </div>
-            <!-- Mobile menu -->
+            <!-- Mobile -->
             <div class="mobile-menu medium:hidden hidden">
                 <ul>
                     <li><a href="#[placeholder: link]" class="nav__mobile-menu--link active-mobile">Home</a></li>
-                    <li><a href="#[placeholder: link]" class="nav__mobile-menu--link">[placeholder]</a></li>
                     <li><a href="#[placeholder: link]" class="nav__mobile-menu--link">[placeholder]</a></li>
                     <li><a href="#[placeholder: link]" class="nav__mobile-menu--link">[placeholder]</a></li>
                     <li><a href="#[placeholder: link]" class="nav__mobile-menu--link">[placeholder]</a></li>
@@ -49,13 +47,26 @@
             </div>
         </nav>
 
-        <main>
-            <div class="page fade-in">
-                <div class="header">
-                    <h1 class="header--heading">Welcome to [placeholder: company name]</h1>
-                    <p class="header--desc">[placeholder: description]</p>
-                </div>
+        <main class="page fade-in">
+            <!-- <section class="heading">
+                <h1 class="heading--heading">Welcome to [placeholder: company name]</h1>
+                <p class="heading--desc">[placeholder: description]</p>
+            </section> -->
 
+            <section class="hero">
+                <h1 class="hero__heading">Gaming, evolved.</h1>
+                <p class="hero__desc">
+                    We create immersive gaming experiences that push the boundaries of technology and creativity.
+                </p>
+                <div class="hero__buttons">
+                    <a href="#[placeholder: link]" class="button button-blue hero__buttons--button">[placeholder]</a>
+                    <a href="#[placeholder: link]" class="button button-blue hero__buttons--button">[placeholder]</a>
+                    <a href="#[placeholder: link]" class="button button-blue hero__buttons--button">[placeholder]</a>
+                </div>
+            </section>
+
+            <section class="games">
+                <h1 class="games__header">Our games</h1>
                 <div class="game-card-container">
                     <div class="game-card">
                         <img src="./example/assets/img/[placeholder: img]" alt="[placeholder: game name]" class="width-full height-48 object-cover">
@@ -75,33 +86,28 @@
                         </div>
                     </div>
 
-                    <div class="game-card">
+                    <div class="game-card medium:col-span-2">
                         <img src="./example/assets/img/[placeholder: img]" alt="[placeholder: game name]" class="width-full height-48 object-cover">
-                        <div class="game-card__content">
-                            <h3 class="game-card__content--heading">[placeholder: game name]</h3>
-                            <p class="game-card__content--desc">[placeholder: game description]</p>
-                            <a href="#[placeholder: link]" class="game-card__content--link">Learn more →</a>
-                        </div>
-                    </div>
-
-                    <div class="game-card">
-                        <img src="./example/assets/img/[placeholder: img]" alt="[placeholder: game name]" class="width-full height-48 object-cover">
-                        <div class="game-card__content">
+                        <div class="game-card__content text-center">
                             <h3 class="game-card__content--heading">[placeholder: game name]</h3>
                             <p class="game-card__content--desc">[placeholder: game description]</p>
                             <a href="#[placeholder: link]" class="game-card__content--link">Learn more →</a>
                         </div>
                     </div>
                 </div>
+            </section>
 
+            <!-- give class name -->
+            <section class="">
                 <div class="section-blue">
+                    <!-- fix stretching across whole page instead of tiny part -->
                     <h2 class="section-blue--heading">[placeholder: heading blue]</h2>
                     <p class="section-blue--desc">[placeholder: description blue]</p>
-                    <a href="#" target="_blank" class="section-blue__button">
-                        <span class="section-blue__button-text fa-brands fa-github-square"></span> [placeholder]
+                    <a href="#" target="_blank" class="button button-blue">
+                        <span class="section-blue__button--logo fa-brands fa-github-square"></span> [placeholder]
                     </a>
                 </div>
-            </div>
+            </section>
         </main>
 
         <footer class="footer">
@@ -114,7 +120,6 @@
                     <h3 class="footer__--heading">Quick Links</h3>
                     <ul class="footer__links--list">
                         <li><a href="#[placeholder: link]" class="links__list--link">Home</a></li>
-                        <li><a href="#[placeholder: link]" class="links__list--link">[placeholder: game name]</a></li>
                         <li><a href="#[placeholder: link]" class="links__list--link">[placeholder: game name]</a></li>
                         <li><a href="#[placeholder: link]" class="links__list--link">[placeholder: game name]</a></li>
                         <li><a href="#[placeholder: link]" class="links__list--link">[placeholder: game name]</a></li>

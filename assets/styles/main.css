@@ -1,17 +1,28 @@
-/* Animations */
 :root {
-    --fade-in: fadeIn 0.6s ease forwards;
+    --fade-in: 0.6s fadeIn ease forwards;
+    scroll-behavior: smooth;
 }
-.game-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
+.fade-in {
+    animation: var(--fade-in);
+}
+/* Game cards */
 .game-card {
     transition: all 0.3s ease;
 }
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 0.1);
+}
+/* Nav */
 .nav-link {
     position: relative;
 }
+/* Nav aniation */
 .nav-link::after {
     content: '';
     height: 2px;
@@ -19,21 +30,15 @@
     bottom: -2px;
     left: 0;
     position: absolute;
-    background-color: #3b82f6;
+    background-color: var(--color-blue-500);
     transition: width 0.3s ease;
 }
+
 .nav-link:hover::after {
     width: 100%;
 }
 .active::after {
     width: 100%;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.fade-in {
-    animation: var(--fade-in);
 }
 .nav {
     background-color: var(--color-white);
@@ -125,21 +130,18 @@
 
 /* Page */
 .page {
-    padding: var(--pad_y-12) var(--pad_x-4);
-    max-width: var(--max-width-4xl);
+    padding: var(--pad_y-4) var(--pad_x-4) var(--pad_bottom-12);
+    max-width: var(--max-width-6xl);
     margin-left: var(--margin_x-auto);
     margin-right: var(--margin_x-auto);
-    @media screen and (min-width: 768px) {
-        padding-left: var(--pad_x-0);
-        padding-right: var(--pad_x-0);
-    }
 }
 
-.header {
+.heading {
     text-align: var(--text-center);
+    margin-top: var(--margin_top-8);
     margin-bottom: var(--margin_bottom-12);
 }
-.header--heading {
+.heading--heading {
     color: var(--color-gray-800);
     font-size: var(--text-4xl);
     line-height: var(--text-4xl_line-height);
@@ -150,12 +152,19 @@
         line-height: var(--text-5xl_line-height);
     }
 }
-.header--desc {
+.heading--desc {
     color: var(--color-gray-600);
     font-size: var(--text-xl);
     line-height: var(--text-xl_line-height);
 }
 
+
+.games__header {
+    color: var(--color-gray-800);
+    font-size: var(--text-3xl);
+    line-height: var(--text-3xl_line-height);
+    margin-bottom: var(--margin_bottom-6);
+}
 .game-card-container {
     display: var(--grid);
     grid-template-columns: var(--grid-cols-1);
@@ -171,7 +180,6 @@
     border-radius: var(--round-lg);
     box-shadow: var(--shadow-md);
     overflow: var(--overflow-hidden);
-    /* bg-white round-lg shadow-md overflow-hidden */
 }
 .game-card__content {
     padding: var(--pad-6);
@@ -213,22 +221,25 @@
     color: var(--color-gray-600);
     margin-bottom: var(--margin_bottom-6);
 }
-.section-blue__button {
+.button {
     display: var(--inline-flex);
     align-items: var(--items-center);
     padding: var(--pad_y-3) var(--pad_x-6);
     background-color: var(--bg-blue-500);
-    color: var(--color-white);
     font-weight: var(--font-medium);
     border-radius: var(--round-lg);
     transition-property: var(--transition_property);
     transition-timing-function: var(--transition_timing_function);
     transition-duration: var(--duration-300);
 }
-.section-blue__button:hover {
+.button-blue {
+    background-color: var(--bg-blue-500);
+    color: var(--color-white);
+}
+.button-blue:hover {
     background-color: var(--bg-blue-600);
 }
-.section-blue__button-text {
+.section-blue__button--logo {
     margin-right: var(--margin_right-2);
 }
 
@@ -285,4 +296,43 @@
     > * + * {
         margin-left: var(--space-x-4);
     }
+}
+
+/* Hero */
+.hero {
+    position: var(--relative);
+    overflow: var(--overflow-hidden);
+    border-radius: var(--round-lg);
+    padding: var(--pad-8);
+    margin-top: var(--margin_top-8);
+    box-shadow: var(--shadow-lg);
+}
+.hero__heading {
+    color: var(--color-gray-800);
+    font-size: var(--text-4xl);
+    line-height: var(--text-5xl_line-height);
+    margin-bottom: var(--margin_bottom-4);
+    @media screen and (min-width: 768px) {
+        font-size: var(--text-5xl);
+        line-height: var(--text-5xl_line-height);
+        margin-bottom: var(--margin_bottom-2);
+    }
+}
+.hero__desc {
+    color: var(--color-gray-600);
+    margin-bottom: var(--margin_bottom-6);
+    @media screen and (min-width: 768px) {
+        font-size: var(--text-xl);
+        line-height: var(--text-xl_line-height);
+    }
+}
+.hero__buttons {
+    > * + * {
+        margin-left: var(--space-x-1);
+    }
+}
+
+/* ... */
+.games {
+    margin-top: var(--margin_bottom-12); /* needs to be replaced with a variable */
 }

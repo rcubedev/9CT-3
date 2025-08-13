@@ -12,7 +12,8 @@
     --unit-0: 0;
     --unit-center: center;
 
-    --sticky: sticky; 
+    --sticky: sticky;
+    --relative: relative;
 
     --block: block; 
     --flex: flex; 
@@ -29,6 +30,7 @@
     --pad-8: calc(var(--pad-1) * 8);
     --pad-12: calc(var(--pad-1) * 12); /* needs class */
     --pad_top-6: var(--pad-6);
+    --pad_bottom-12: var(--pad-12);
     --pad_x-0: var(--pad-0); /* needs class, only used in media lookup */
     --pad_x-2: var(--pad-2);
     --pad_x-4: var(--pad-4);
@@ -69,12 +71,14 @@
 
     
     --max-width-4xl: 56rem; /* needs changing from unit to container var */
+    --max-width-5xl: 64rem; /* needs changing from unit to container var */
     --max-width-6xl: 72rem; /* needs changing from unit to container var */
 
     --space-1: var(--unit-rem); /* class shouldn't exist here, won't be used */
     --space-2: calc(var(--space-1) * 2); /* class shouldn't exist here, won't be used */
     --space-4: calc(var(--space-1) * 4); /* class shouldn't exist here, won't be used */
     --space-x-1: var(--space-1);
+    --space-x-2: var(--space-2);
     --space-x-4: var(--space-4);
     --space-y-2: var(--space-2);
 
@@ -83,9 +87,16 @@
     --grid-cols-2: repeat(2, var(--grid-cols)); /* needs class, used in media lookup */
     --grid-cols-3: repeat(3, var(--grid-cols)); /* needs class, used in media lookup */
 
+    --row-span-2: span 2 / span 2; /* needs new var */
+    --row-span-full: 1 / -1; /* needs new var */
+
+    --col-span-2: var(--row-span-2); /* needs new var */
+    --col-span-full: var(--row-span-full); /* needs new var */
+
     --round-lg: 0.5rem; /* needs radius unit */
 
     --gap-1: var(--unit-rem); /* needs class */
+    --gap-2: calc(var(--gap-1) * 2);
     --gap-8: calc(var(--gap-1) * 8);
 
     --overflow-hidden: hidden; 
@@ -93,8 +104,8 @@
     --justify-between: space-between; 
     --justify-center: var(--unit-center);
 
-    --shadow-md: 0 0 #0000, 0 0 #0000, 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* needs a unit */
-    --shadow-lg: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* needs a unit */
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* needs a unit */
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); /* needs a unit */
 
     --text-center: var(--unit-center);
     --items-center: var(--unit-center);
@@ -107,6 +118,8 @@
     --text-xl_line-height: 1.75rem; /* needs a unit */
     --text-2xl: 1.5rem; /* needs a unit */
     --text-2xl_line-height: 2rem; /* needs a unit */
+    --text-3xl: 1.875rem; /* needs a unit */
+    --text-3xl_line-height: 2.25rem; /* needs a unit */
     --text-4xl: 2.25rem; /* needs a unit */
     --text-4xl_line-height: 2.5rem; /* needs a unit */
     --text-5xl: 3rem; /* needs a unit, class, only used in media lookup */
@@ -163,6 +176,9 @@ body {
     .sticky {
         position: var(--sticky);
     }
+    .relative { /* check this */
+        position: var(--relative);
+    }
 
 /* Display types */
     .block {
@@ -192,6 +208,10 @@ body {
     /* Top */
         .pad_top-6 {
             padding-top: var(--pad_top-6);
+        }
+    /* Bottom */
+        .pad_bottom-12 {
+            padding-bottom: var(--pad_bottom-12)
         }
     /* X */
         .pad_x-2 {
@@ -288,32 +308,59 @@ body {
     .max-width-4xl {
         max-width: var(--max-width-4xl);
     }
+    .max-width-5xl {
+        max-width: var(--max-width-5xl);
+    }
     .max-width-6xl {
         max-width: var(--max-width-6xl);
     }
 
 /* Space */
-    .space-x-1 > * + * {
-        margin-left: var(--space-x-1);
-    }
-    .space-x-4 > * + * {
-        margin-left: var(--space-x-4);
-    }
-    .space-y-2 > * + * {
-        margin-top: var(--space-y-2);
-    }
+    /* X */
+        .space-x-1 > * + * {
+            margin-left: var(--space-x-1);
+        }
+        .space-x-2 > * + * {
+            margin-left: var(--space-x-2);
+        }
+        .space-x-4 > * + * {
+            margin-left: var(--space-x-4);
+        }
+    /* Y */
+        .space-y-2 > * + * {
+            margin-top: var(--space-y-2);
+        }
 
-/* Grid Columns */
-    .grid-cols-1 {
-        grid-template-columns: var(--grid-cols-1);
-    }
+/* Grid Management */
+    /* Grid Columns */
+        .grid-cols-1 {
+            grid-template-columns: var(--grid-cols-1);
+        }
+    /* Row span */
+        .row-span-2 {
+            grid-row: var(--row-span-2);
+        }
+        .row-span-full {
+            grid-row: var(--row-span-full);
+        }
+
+    /* Column span */
+        .col-span-2 {
+            grid-column: span 2 / span 2;
+        }
+        .col-span-full {
+            grid-column: 1 / -1;
+        }
 
 /* Rounded */
     .round-lg {
         border-radius: var(--round-lg);
     }
 
-/* Gap (1 = 4px) */
+/* Gap */
+    .gap-2 {
+        gap: var(--gap-2)
+    }
     .gap-8 {
         gap: var(--gap-8)
     }
@@ -363,6 +410,10 @@ body {
     .text-2xl {
         font-size: var(--text-2xl);
         line-height: var(--text-2xl_line-height);
+    }
+    .text-3xl {
+        font-size: var(--text-3xl);
+        line-height: var(--text-3xl_line-height);
     }
     .text-4xl {
         font-size: var(--text-4xl);
@@ -489,13 +540,29 @@ body {
         .medium\:hidden {
             display: var(--hidden);
         }
-    /* Grid columns */
-        .medium\:grid-cols-2 {
-            grid-template-columns: var(--grid-cols-2);
-        }
-        .medium\:grid-cols-3 {
-            grid-template-columns: var(--grid-cols-3);
-        }
+    /* Grid Management */
+        /* Grid Columns */
+            .medium\:grid-cols-2 {
+                grid-template-columns: var(--grid-cols-2);
+            }
+            .medium\:grid-cols-3 {
+                grid-template-columns: var(--grid-cols-3);
+            }
+        /* Row span */
+            .medium\:row-span-2 {
+                grid-row: var(--row-span-2);
+            }
+            .medium\:row-span-full {
+                grid-row: var(--row-span-full);
+            }
+
+        /* Column span */
+            .medium\:col-span-2 {
+                grid-column: span 2 / span 2;
+            }
+            .medium\:col-span-full {
+                grid-column: 1 / -1;
+            }
 }
 /*****************************************/
 /* Other */

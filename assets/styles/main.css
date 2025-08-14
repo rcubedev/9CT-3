@@ -234,7 +234,6 @@
     display: var(--inline-flex);
     align-items: var(--items-center);
     padding: var(--pad_y-3) var(--pad_x-6);
-    background-color: var(--bg-blue-500);
     font-weight: var(--font-medium);
     border-radius: var(--round-lg);
     transition-property: var(--transition_property);
@@ -324,7 +323,6 @@
     @media screen and (min-width: 768px) {
         font-size: var(--text-5xl);
         line-height: var(--text-5xl_line-height);
-        margin-bottom: var(--margin_bottom-2);
     }
 }
 .hero__desc {

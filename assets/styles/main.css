@@ -10,11 +10,11 @@
 .fade-in {
     animation: var(--fade-in);
 }
-/* Game cards */
-.game-card, .values-card {
+/* Crds */
+.card-anim {
     transition: all 0.3s ease;
 }
-.game-card:hover, .values-card:hover {
+.card-anim:hover, .card-anim:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgb(0 0 0 / 0.1);
 }
@@ -117,17 +117,17 @@
     line-height: var(--text-sm-line-height);
     padding: var(--pad_y-4) var(--pad_x-2);
 }
-.nav__mobile-menu--link.active-mobile {
+.nav__mobile-menu--link.active {
     color: var(--color-white);
     background-color: var(--bg-blue-500);
     font-weight: var(--font-semibold);
 }
-.nav__mobile-menu--link:not(.active-mobile) {
+.nav__mobile-menu--link:not(.active) {
     transition-property: var(--transition_property);
     transition-timing-function: var(--transition_timing_function);
     transition-duration: var(--duration-300);
 }
-.nav__mobile-menu--link:not(.active-mobile):hover {
+.nav__mobile-menu--link:not(.active):hover {
     background-color: var(--bg-gray-100);
 }
 
@@ -163,7 +163,7 @@
 
 /* Games */
 .games {
-    margin-top: var(--margin_bottom-12); /* needs to be replaced with a variable */
+    margin-top: var(--margin_bottom-12);
 }
 .games__header {
     color: var(--color-gray-800);
@@ -335,7 +335,7 @@
 }
 .hero__buttons {
     display: var(--flex);
-    flex-wrap: var(--wrap); /* needs to be replaced with a variable */
+    flex-wrap: var(--wrap);
     gap: var(--gap-2);
     flex-direction: column; /* needs to be replaced with a variable */
     @media screen and (min-width: 768px) {
@@ -349,7 +349,7 @@
 
 /* Values */
 .values {
-    margin-top: var(--margin_bottom-12); /* needs to be replaced with a variable */
+    margin-top: var(--margin_bottom-12);
 }
 .values__header {
     color: var(--color-gray-800);

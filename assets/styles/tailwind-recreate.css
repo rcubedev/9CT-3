@@ -50,6 +50,7 @@
     --margin_top-4: var(--margin-4);
     --margin_top-8: var(--margin-8);
     --margin_top-12: var(--margin-12);
+    --margin_right-1: var(--margin-1);
     --margin_right-2: var(--margin-2);
     --margin_bottom-2: var(--margin-2);
     --margin_bottom-4: var(--margin-4);
@@ -256,6 +257,9 @@ body {
             margin-top: var(--margin_top-12);
         }
     /* Right */
+        .margin_right-1 {
+            margin-right: var(--margin_right-1);
+        }
         .margin_right-2 {
             margin-right: var(--margin_right-2);
         }

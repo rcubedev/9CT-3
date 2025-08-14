@@ -375,6 +375,10 @@
 .values-card__content {
     padding: var(--pad-6);
 }
+.values-card__content--img {
+    color: var(--color-gray-600);
+    margin-right: var(--margin_right-2);
+}
 .values-card__content--heading {
     color: var(--color-gray-800);
     font-size: var(--text-xl);

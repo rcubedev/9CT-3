@@ -400,3 +400,63 @@
     color: var(--color-gray-600);
     margin-bottom: var(--margin_bottom-4);
 }
+
+.dropdown__details {
+    overflow: var(--overflow-hidden);
+    border: 1px solid var(--color-gray-200);
+    border-top-left-radius: var(--round-lg);
+    border-top-right-radius: var(--round-lg);
+    background-color: var(--bg-white);
+}
+.dropdown__details--summary { /* Hide default marker */
+    display: var(--block);
+}
+.dropdown__details--summary::-webkit-details-marker { /* Hide on safari */
+    display: var(--hidden);
+}
+.dropdown__details--heading {
+    position: var(--relative);
+    padding: var(--pad_y-3) var(--pad_x-4);
+    font-size: var(--text-sm);
+    line-height: var(--text-sm_line-height);
+    display: var(--flex);
+    align-items: var(--items-center);
+    gap: var(--gap-3);
+    cursor: var(--cursor-pointer);
+}
+.dropdown__details--heading::before {
+    content: "\203A";
+    color: var(--color-blue-500);
+    font-size: var(--text-lg);
+    line-height: var(--text-lg_line-height);
+    transform: rotate(0deg);
+    transition: transform 150ms linear;
+}
+.dropdown__content {
+    box-sizing: var(--box-border);
+    max-height: var(--unit-0);
+    overflow: var(--overflow-hidden);
+    border-bottom-left-radius: var(--round-lg);
+    border-bottom-right-radius: var(--round-lg);
+    background-color: var(--bg-white);
+    border: 1px solid transparent; /* needs a var */
+    border-top: none; /* needs a var */
+    font-size: var(--text-sm);
+    line-height: var(--text-sm_line-height);
+    padding-left: var(--pad_x-4);
+    padding-right: var(--pad_x-4);
+    transition: max-height 150ms linear, padding 150ms linear, border 0ms linear 150ms;
+}
+.dropdown__content > * {
+    margin-block-start: 1em; /* needs a var */
+    margin-block-end: 1em; /* needs a var */
+}
+.dropdown__details[open] + .dropdown__content {
+    max-height: var(--dropdown-max-height, 0px);
+    border-color: var(--color-gray-200);
+    transition: max-height 150ms linear, border 0ms linear;
+}
+.dropdown__details[open] .dropdown__details--heading::before {
+    transform: rotate(90deg);
+    transition: transform 150ms linear;
+}

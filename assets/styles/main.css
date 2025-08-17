@@ -322,6 +322,7 @@
     padding: var(--pad-8);
     margin-top: var(--margin_top-8);
     box-shadow: var(--shadow-lg);
+    background-color: var(--bg-white);
 }
 .hero__heading {
     color: var(--color-gray-800);

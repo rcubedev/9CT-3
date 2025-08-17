@@ -439,14 +439,14 @@
     overflow: var(--overflow-hidden);
     border-bottom-left-radius: var(--round-lg);
     border-bottom-right-radius: var(--round-lg);
-    background-color: var(--bg-white);
+    background-color: initial;
     border: 1px solid transparent; /* needs a var */
     border-top: none; /* needs a var */
     font-size: var(--text-sm);
     line-height: var(--text-sm_line-height);
     padding-left: var(--pad_x-4);
     padding-right: var(--pad_x-4);
-    transition: max-height 150ms linear, padding 150ms linear, border 0ms linear 150ms;
+    transition: max-height 150ms linear, padding 150ms linear, border 0ms linear 150ms, background-color 0ms linear 150ms;
 }
 .dropdown__content > * {
     margin-block-start: 1em; /* needs a var */
@@ -455,7 +455,8 @@
 .dropdown__details[open] + .dropdown__content {
     max-height: var(--dropdown-max-height, 0px);
     border-color: var(--color-gray-200);
-    transition: max-height 150ms linear, border 0ms linear;
+    background-color: var(--bg-white);
+    transition: max-height 150ms linear, border 0ms linear, background-color 0ms linear;
 }
 .dropdown__details[open] .dropdown__details--heading::before {
     transform: rotate(90deg);

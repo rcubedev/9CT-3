@@ -32,7 +32,7 @@
 .nav-link:hover::after {
     width: 100%;
 }
-.active::after {
+.nav-link.active::after {
     width: 100%;
 }
 

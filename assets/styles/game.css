@@ -13,9 +13,11 @@
     }
 }
 
-/* Values */
-.info, .screenshots, .faq {
-    margin-top: var(--margin_bottom-12);
+.info, .screenshots, .reviews {
+    margin-top: var(--margin_top-12);
+}
+.faq {
+    margin-top: var(--margin_top-8);
 }
 .info-container {
     display: var(--grid);
@@ -27,7 +29,7 @@
         grid-template-columns: var(--grid-cols-2);
     }
 }
-.info-card, .screenshots-card {
+.info-card, .screenshots-card, .reviews__card {
     background-color: var(--bg-white);
     border-radius: var(--round-lg);
     box-shadow: var(--shadow-md);
@@ -53,7 +55,7 @@
     margin-bottom: var(--margin_bottom-4);
 }
 
-.screenshots__header, .faq__header {
+.screenshots__header, .reviews__header, .faq__header {
     color: var(--color-gray-800);
     font-size: var(--text-3xl);
     line-height: var(--text-3xl_line-height);
@@ -68,6 +70,114 @@
     @media screen and (min-width: 768px) {
         grid-template-columns: var(--grid-cols-3);
     }
+}
+
+/* Reviews slider (horizontal swipe + dots) */
+.reviews__wrapper {
+    margin-top: var(--margin_bottom-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-2);
+    align-items: center;
+}
+
+/* the visible scroller */
+.carousel {
+    width: 100%; /* needs var */
+    overflow-x: auto; /* needs var */
+    -webkit-overflow-scrolling: touch; /* needs var */
+    scroll-snap-type: x mandatory; /* needs var */
+    scroll-behavior: smooth; /* needs var */
+    -ms-overflow-style: none; /* IE/Edge */ /* needs var */
+    scrollbar-width: none; /* Firefox */ /* needs var */
+
+    padding: 0; /* remove any horizontal padding so cards align perfectly */
+}
+
+/* hide webkit scrollbar */
+.carousel::-webkit-scrollbar {
+    display: var(--hidden);
+    height: 0; /* needs var */
+}
+
+/* track containing cards */
+.carousel__track {
+    display: var(--flex);
+    gap: var(--gap-4);
+    margin: 0; /* needs var */
+    list-style: none; /* needs var */
+    padding-bottom: var(--pad-3); /* needs var */
+    align-items: stretch; /* needs var */
+}
+
+/* card: mobile shows one card per page, desktop shows exactly 3 per page */
+.reviews__card {
+    flex: 0 0 100%; /* mobile fallback */ /* needs var */
+    scroll-snap-align: start; /* needs var */
+    padding: var(--pad-6);
+    @media screen and (min-width: 768px) {
+        flex: 0 0 calc((100% - (2 * var(--gap-4))) / 3); /* needs var */
+    }
+}
+
+/* quote and meta */
+.reviews__quote {
+    font-size: var(--text-lg);
+    color: var(--color-gray-800);
+    margin-bottom: var(--margin_bottom-2);
+}
+.reviews__meta {
+    display: var(--flex);
+    align-items: var(--items-center); /* vertically center text + stars */
+    gap: 0.25rem; /* small spacing between name/score/stars */ /* needs var */
+    font-size: var(--text-sm);
+    line-height: var(--text-sm_line-height);
+}
+.reviews__name {
+    font-weight: var(--font-semibold);
+    color: var(--color-gray-700);
+}
+.reviews__rating {
+    display: var(--inline-flex);
+    color: var(--color-gray-300);
+}
+.reviews__rating--positive {
+    color: var(--color-yellow-500)
+}
+.reviews__rating-number {
+    color: var(--color-gray-500);
+}
+
+
+/* hide webkit scrollbar lightly */
+.carousel__slider::-webkit-scrollbar { height: 8px; }
+.carousel__slider::-webkit-scrollbar-thumb {
+    background: var(--color-gray-300);
+    border-radius: 999px;
+}
+
+/* dots */
+.carousel__dots {
+    display: var(--flex);
+    gap: var(--gap-2);
+    align-items: var(--items-center);
+    justify-content: var(--justify-center);
+    padding-bottom: var(--pad_y-3);
+}
+.carousel__dots--dot {
+    width: 10px;
+    height: 10px; /* needs var */
+    background: var(--color-gray-300); /* needs var */
+    border-radius: 999px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 160ms linear, background-color 160ms linear;
+}
+.carousel__dots--dot.active {
+    background: var(--color-blue-500);
+    transform: scale(1.15);
+    outline: none;
 }
 
 .faq__question {

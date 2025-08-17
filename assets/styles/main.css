@@ -1,16 +1,41 @@
 :root {
-    --fade-in: 0.6s fadeIn ease forwards;
     scroll-behavior: smooth;
 }
 /* Animations */
-@keyframes fadeIn {
+@keyframes slide-down-10 {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
-.fade-in {
-    animation: var(--fade-in);
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
-/* Crds */
+@keyframes fade-out {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+@keyframes scale-in {
+    from { transform: translateY(12px) scale(0.98); }
+    to { transform: translateY(0) scale(1); }
+}
+@keyframes scale-out {
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(12px) scale(0.98); }
+}
+@keyframes slide-in {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+@keyframes slide-out {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100%); }
+}
+.fade-in {
+    animation:
+        0.6s fade-in ease forwards,
+        0.6s slide-down-10 ease forwards;
+}
+/* Cards */
 .card-anim {
     transition: all 0.3s ease;
 }
@@ -346,9 +371,9 @@
     display: var(--flex);
     flex-wrap: var(--wrap);
     gap: var(--gap-2);
-    flex-direction: column; /* needs to be replaced with a variable */
+    flex-direction: var(--flex-col);
     @media screen and (min-width: 768px) {
-        flex-direction: row;
+        flex-direction: var(--flex-row);
         gap: var(--gap-2);
     }
 }
@@ -439,7 +464,7 @@
     overflow: var(--overflow-hidden);
     border-bottom-left-radius: var(--round-lg);
     border-bottom-right-radius: var(--round-lg);
-    background-color: initial;
+    background-color: var(--bg-transparent);
     border: 1px solid transparent; /* needs a var */
     border-top: none; /* needs a var */
     font-size: var(--text-sm);

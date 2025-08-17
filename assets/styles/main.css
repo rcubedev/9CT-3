@@ -81,14 +81,14 @@
     background-color: var(--bg-blue-500);
     color: var(--color-white);
 }
-.button-blue:hover, .button-blue:focus {
+.button-blue:hover {
     background-color: var(--bg-blue-600);
 }
 .button-gray {
     background-color: var(--bg-gray-400);
     color: var(--color-white);
 }
-.button-gray:hover, .button-gray:focus {
+.button-gray:hover {
     background-color: var(--bg-gray-500);
 }
 

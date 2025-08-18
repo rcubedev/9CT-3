@@ -119,5 +119,4 @@ class CarouselSlider {
   }
 }
 
-// initialize slider
 new CarouselSlider('.carousel', '.carousel__track', '.carousel__dots', 'carousel__dots--dot');

@@ -1,5 +1,3 @@
-// Mobile menu toggle
-
 function initMobileMenu(btnSelector, menuSelector) {
   const btn = document.querySelector(btnSelector);
   const menu = document.querySelector(menuSelector);
@@ -15,14 +13,13 @@ function initDropdowns(dropdownSelector) {
     const content = dropdown.querySelector('.dropdown__content');
     if (!details || !content) return;
 
-    // Initialise on load
     setDropdownMaxHeight(dropdown, details, content);
 
-    // Update whenever <details> is toggled
     details.addEventListener('toggle', () => setDropdownMaxHeight(dropdown, details, content));
   });
 }
-// Helper to set the CSS variable on the parent .dropdown
+
+// Helper: Set the CSS variable on the parent .dropdown
 function setDropdownMaxHeight(dropdown, details, content) {
   if (!dropdown || !details || !content) return;
   if (details.open) {

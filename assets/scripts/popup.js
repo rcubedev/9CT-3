@@ -1,4 +1,4 @@
-// Lightweight game popup: lazy-load iframe, open/close, focus restore
+// Popup: lazy-load iframe, open/close, focus restore
 class Popup {
   constructor(btnSelector = '#play', popupSelector = '.popup') {
     this.btn = document.querySelector(btnSelector);
@@ -10,7 +10,6 @@ class Popup {
     this.iframe = this.popup.querySelector('iframe');
     this.lastFocused = null;
 
-    // bind handlers so we can add/remove listeners reliably
     this.onKey = this.onKey.bind(this);
     this.onAnimEnd = this.onAnimEnd.bind(this);
     this.open = this.open.bind(this);
@@ -30,7 +29,6 @@ class Popup {
   this.popup.classList.add('popup--open');
     this.popup.classList.add('active');
 
-    // lazy-load iframe
     if (this.iframe && !this.iframe.dataset.loaded) {
       const src = this.iframe.dataset.src || this.iframe.getAttribute('data-src') || '';
       if (src) {
@@ -39,22 +37,17 @@ class Popup {
       }
     }
 
-    // trap focus lightly
     const focusable = this.popup.querySelectorAll('button, a, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])');
     if (focusable.length) focusable[0].focus();
     document.addEventListener('keydown', this.onKey);
   }
 
   close() {
-    // play closing animation then remove open state
   this.popup.classList.add('popup--closing');
-    // ensure open class removed so open animations don't conflict
   this.popup.classList.remove('popup--open');
 
-    // listen for animation end on popup to teardown
     this.popup.addEventListener('animationend', this.onAnimEnd);
 
-    // fallback: if animation doesn't fire, teardown after a short timeout
     this._fallback = setTimeout(() => {
       if (this.popup.classList.contains('popup--closing')) this.teardown();
     }, 35000);
@@ -64,7 +57,6 @@ class Popup {
     clearTimeout(this._fallback);
   this.popup.classList.remove('popup--closing');
     this.popup.classList.remove('active');
-    // unload iframe to stop audio
     if (this.iframe && this.iframe.dataset.loaded) {
       this.iframe.removeAttribute('src');
       delete this.iframe.dataset.loaded;
@@ -75,7 +67,6 @@ class Popup {
   }
 
   onAnimEnd(e) {
-  // wait for the window/overlay animation to finish
   const win = this.popup.querySelector('.popup__window');
   const ov = this.popup.querySelector('.popup__overlay');
     if (e.target === win || e.target === ov) {
@@ -85,7 +76,6 @@ class Popup {
 
   onKey(e) {
     if (e.key === 'Escape') return this.close();
-    // simple tab trap
     if (e.key === 'Tab') {
       const focusables = Array.from(this.popup.querySelectorAll('button, a, [href], input, textarea, select, [tabindex]:not([tabindex="-1"])'));
       if (!focusables.length) return;
@@ -100,5 +90,4 @@ class Popup {
   }
 }
 
-// instantiate to wire up behavior (follows carousel.js pattern)
 new Popup();

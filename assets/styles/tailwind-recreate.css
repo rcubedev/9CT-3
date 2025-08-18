@@ -23,7 +23,8 @@
     --flex: flex; 
     --inline-flex: inline-flex; 
     --grid: grid; 
-    --hidden: none; 
+    --hidden: none;
+    --wrap: wrap;
 
     --flex-col: column;
     --flex-row: row;

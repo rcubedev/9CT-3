@@ -164,7 +164,7 @@
 .nav__mobile-menu--link {
     display: var(--block);
     font-size: var(--text-sm);
-    line-height: var(--text-sm-line-height);
+    line-height: var(--text-sm_line-height);
     padding: var(--pad_y-4) var(--pad_x-2);
 }
 .nav__mobile-menu--link.active {

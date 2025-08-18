@@ -26,7 +26,7 @@ class Popup {
 
   open() {
     this.lastFocused = document.activeElement;
-  this.popup.classList.add('popup--open');
+    this.popup.classList.add('popup--open');
     this.popup.classList.add('active');
 
     if (this.iframe && !this.iframe.dataset.loaded) {
@@ -43,8 +43,8 @@ class Popup {
   }
 
   close() {
-  this.popup.classList.add('popup--closing');
-  this.popup.classList.remove('popup--open');
+    this.popup.classList.add('popup--closing');
+    this.popup.classList.remove('popup--open');
 
     this.popup.addEventListener('animationend', this.onAnimEnd);
 
@@ -55,7 +55,7 @@ class Popup {
 
   teardown() {
     clearTimeout(this._fallback);
-  this.popup.classList.remove('popup--closing');
+    this.popup.classList.remove('popup--closing');
     this.popup.classList.remove('active');
     if (this.iframe && this.iframe.dataset.loaded) {
       this.iframe.removeAttribute('src');
@@ -67,11 +67,11 @@ class Popup {
   }
 
   onAnimEnd(e) {
-  const win = this.popup.querySelector('.popup__window');
-  const ov = this.popup.querySelector('.popup__overlay');
-    if (e.target === win || e.target === ov) {
-      this.teardown();
-    }
+    const win = this.popup.querySelector('.popup__window');
+    const ov = this.popup.querySelector('.popup__overlay');
+      if (e.target === win || e.target === ov) {
+        this.teardown();
+      }
   }
 
   onKey(e) {

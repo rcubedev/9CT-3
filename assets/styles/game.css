@@ -1,3 +1,8 @@
+/* Scroll to section */
+#faq {
+    scroll-margin-top: 90px;
+}
+
 /* Hero */
 .hero {
     /* Mostly managed by main.css, this overrides or sets other properties */

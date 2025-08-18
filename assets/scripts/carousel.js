@@ -2,7 +2,7 @@ class CarouselSlider {
   constructor(sliderSelector, trackSelector, dotsSelector, dotsClassName) {
     this.slider = document.querySelector(sliderSelector);
     this.dotsContainer = document.querySelector(dotsSelector);
-    this.dotsClassName = dotsClassName
+    this.dotsClassName = dotsClassName;
     if (!this.slider || !this.dotsContainer) return;
 
     this.track = this.slider.querySelector(trackSelector);

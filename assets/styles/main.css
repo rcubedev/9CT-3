@@ -261,7 +261,6 @@
 
 .section-blue {
     background-color: var(--bg-blue-50);
-    max-width: var(--max-width-4xl);
     border-radius: var(--round-lg);
     padding: var(--pad-8);
     text-align: var(--text-center);
@@ -280,7 +279,24 @@
     color: var(--color-gray-600);
     margin-bottom: var(--margin_bottom-6);
 }
-.section-blue__button--logo {
+.newsletter {
+    display: var(--flex);
+    gap: var(--gap-3);
+}
+.newsletter__input {
+    flex: 1;
+    padding: var(--pad-3);
+    border: 1px solid var(--color-gray-300);
+    border-radius: var(--round-lg);
+}
+.newsletter__input::placeholder {
+    color: var(--color-gray-500);
+}
+.newsletter__button {
+    padding-left: calc(var(--pad-1) * 7);
+    padding-right: calc(var(--pad-1) * 7);
+}
+.newsletter__button--logo {
     margin-right: var(--margin_right-2);
 }
 

@@ -59,7 +59,7 @@
                 <div class="hero__buttons">
                     <a href="#[placeholder: link]" class="button button-blue hero__buttons--button">[placeholder]</a>
                     <a href="#games" class="button button-blue hero__buttons--button">See All Games</a>
-                    <a href="#[placeholder: link]" class="button button-blue hero__buttons--button">[placeholder]</a>
+                    <a href="#section-blue" class="button button-gray hero__buttons--button">Join Our Newsletter</a>
                 </div>
             </section>
 
@@ -119,12 +119,15 @@
                 </div>
             </section>
 
-            <section class="section-blue">
-                <h2 class="section-blue--heading">[placeholder: heading blue]</h2>
-                <p class="section-blue--desc">[placeholder: description blue]</p>
-                <a href="#" target="_blank" class="button button-blue">
-                    <span class="section-blue__button--logo fa-brands fa-github-square"></span> [placeholder]
-                </a>
+            <section class="section-blue" id="section-blue">
+                <h2 class="section-blue--heading">Join Our Newsletter</h2>
+                <p class="section-blue--desc">Get early access to updates, recieve playtest invites, and behind-the-scenes news from our dev team.</p>
+                <form class="newsletter">
+                    <input class="newsletter__input" name="email" type="email" autocomplete="email" placeholder="example@example.com">
+                    <button class="newsletter__button button button-blue" type="submit">
+                        <span class="newsletter__button--logo fa-solid fa-envelope fa-width-auto"></span> Subscribe
+                    </button>
+                </form>
             </section>
         </main>
 
@@ -161,5 +164,6 @@
             </div>
         </footer>
         <script src="./assets/scripts/main.js" async defer></script>
+        <script src="./assets/scripts/newsletter.js" defer></script>
     </body>
 </html> 

@@ -50,7 +50,7 @@ class Popup {
 
     this._fallback = setTimeout(() => {
       if (this.popup.classList.contains('popup--closing')) this.teardown();
-    }, 35000);
+    }, 400);
   }
 
   teardown() {

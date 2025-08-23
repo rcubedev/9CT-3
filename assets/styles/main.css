@@ -94,7 +94,8 @@
 
 /* Nav */
 .nav {
-    background-color: var(--color-white);
+    /* use surface variable so dark mode can swap it */
+    background-color: var(--bg-white);
     box-shadow: var(--shadow-lg);
     position: var(--sticky);
     top: var(--top-0);
@@ -148,8 +149,9 @@
 .nav__mobile-button {
     display: var(--flex);
     align-items: var(--items-center);
+    margin-left: auto; /* push it to the far right inside the nav */
     @media screen and (min-width: 768px) {
-        display: var(--hidden);
+        display: none !important; /* force hide on desktop */
     }
 }
 .nav__mobile-button__button {
@@ -179,6 +181,26 @@
 }
 .nav__mobile-menu--link:not(.active):hover {
     background-color: var(--bg-gray-100);
+}
+
+/* Ensure the in‑nav mobile button is hidden on desktop and stays right-aligned if visible */
+.nav__mobile-button {
+    /* existing rules ... */
+    margin-left: auto; /* push it to the far right inside the nav */
+}
+@media screen and (min-width: 768px) {
+    .nav__mobile-button {
+        display: none !important; /* force hide on desktop */
+    }
+}
+
+/* Ensure the floating button is always pinned to bottom-right (override conflicts) */
+.floating-hamburger {
+    position: fixed;
+    right: 1rem !important;
+    left: auto !important;
+    bottom: 1rem !important;
+    z-index: 1100; /* ensure above other elements */
 }
 
 /* Page */
@@ -502,4 +524,330 @@
 .dropdown__details[open] .dropdown__details--heading::before {
     transform: rotate(90deg);
     transition: transform 150ms linear;
+}
+
+/* Info / Overview card */
+.info {
+    margin-top: var(--margin_top-8);
+}
+.info-card {
+    background-color: var(--bg-white);
+    border-radius: var(--round-lg);
+    box-shadow: var(--shadow-md);
+    overflow: var(--overflow-hidden);
+}
+.info-card__content {
+    padding: var(--pad-6);
+    max-width: var(--max-width-6xl);
+    margin-left: var(--margin_x-auto);
+    margin-right: var(--margin_x-auto);
+}
+.info-card__content--heading {
+    color: var(--color-gray-800);
+    font-size: var(--text-xl);
+    line-height: var(--text-xl_line-height);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--margin_bottom-4);
+    display: flex;
+    align-items: center;
+    gap: var(--gap-3);
+}
+.info-card__content--img {
+    color: var(--color-gray-600);
+}
+.info-card__content--desc {
+    color: var(--color-gray-600);
+}
+
+/* Floating hamburger button (always bottom-right) - default transparent, expand on hover/open */
+.floating-hamburger {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255,255,255,0.35); /* slightly translucent by default */
+    border: 1px solid rgba(31,41,55,0.06); /* light border while idle */
+    box-shadow: none;
+    padding: 0;
+    z-index: var(--z-index-100);
+    cursor: var(--cursor-pointer);
+    transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease, border-color 160ms ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0.95;
+}
+.floating-hamburger__img {
+    width: calc(var(--width-6) * 0.9);
+    height: calc(var(--height-6) * 0.9);
+    display: block;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: transform 160ms ease, opacity 160ms ease;
+}
+
+/* when hovered or menu is open, make it solid, elevate and slightly larger */
+.floating-hamburger:hover,
+.floating-hamburger--open {
+    background-color: var(--bg-white);
+    border-color: rgba(31,41,55,0.08);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    transform: scale(1.08);
+}
+.floating-hamburger:hover .floating-hamburger__img,
+.floating-hamburger--open .floating-hamburger__img {
+    transform: scale(1.03);
+    opacity: 1;
+}
+
+/* keep accessible focus styles */
+.floating-hamburger:focus-visible {
+    outline: 2px solid rgba(59,130,246,0.22);
+    outline-offset: 3px;
+}
+
+/* Floating menu panel + animations */
+@keyframes floating-menu-in {
+    from { opacity: 0; transform: translateY(8px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes floating-menu-out {
+    from { opacity: 1; transform: translateY(0) scale(1); }
+    to   { opacity: 0; transform: translateY(8px) scale(0.98); }
+}
+
+.floating-menu {
+    position: fixed;
+    right: 1rem;
+    bottom: calc(1rem + 3.25rem + 0.5rem); /* above the floating button */
+    width: 14rem;
+    max-width: calc(100vw - 2rem);
+    border-radius: var(--round-lg);
+    background-color: rgba(255,255,255,0.5);
+    border: 1px solid rgba(31,41,55,0.06); /* light border while idle */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: none;
+    transform-origin: bottom right;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px) scale(0.98);
+    transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, opacity 160ms ease, transform 160ms ease;
+    z-index: var(--z-index-100);
+}
+
+/* show when open or hovered */
+.floating-menu--open,
+.floating-menu:hover {
+    background-color: var(--bg-white);
+    border-color: rgba(31,41,55,0.08);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    animation: floating-menu-in 180ms ease both;
+}
+
+/* when closing via JS, you can add .floating-menu--closing to run reverse animation */
+.floating-menu.floating-menu--closing {
+    animation: floating-menu-out 120ms ease both;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Panel contents */
+.floating-menu__panel {
+    padding: 0.5rem;
+}
+.floating-menu__items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.floating-menu__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    color: var(--color-gray-800);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+.floating-menu__item:hover {
+    background-color: var(--bg-gray-50);
+}
+.floating-menu__label {
+    margin-right: 0.5rem;
+    color: var(--color-gray-700);
+}
+
+/* Toggle switch */
+.switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.switch input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.switch__slider {
+    width: 2rem;
+    height: 1.1rem;
+    background: var(--bg-gray-300);
+    border-radius: 999px;
+    display: inline-block;
+    position: relative;
+    transition: background 140ms ease;
+}
+.switch__slider::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 0.9rem;
+    height: 0.9rem;
+    background: var(--bg-white);
+    border-radius: 999px;
+    transition: transform 140ms ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.switch input:checked + .switch__slider {
+    background: var(--bg-blue-500);
+}
+.switch input:checked + .switch__slider::after {
+    transform: translateX(0.9rem);
+}
+
+/* Dark mode adjustments */
+.dark .floating-menu {
+    background-color: rgba(17,24,39,0.55);
+    border-color: rgba(255,255,255,0.06);
+    color: var(--color-white);
+}
+.dark .floating-menu__item { color: var(--color-white); }
+.dark .switch__slider {
+    background: rgba(255,255,255,0.12);
+}
+.dark .switch input:checked + .switch__slider {
+    background: var(--bg-blue-600);
+}
+
+/* Dark theme variable overrides and tweaks */
+.dark {
+	/* Surface / background swaps */
+	--bg-white: rgb(15 23 42);        /* primary card / nav background */
+	--bg-gray-50: rgb(8 10 15);       /* page background */
+	--bg-gray-100: rgb(10 14 20);
+	--bg-gray-200: rgb(16 20 27);
+	--bg-gray-300: rgb(30 41 59);
+
+	/* Text colors (light on dark) */
+	--color-white: rgb(255 255 255);
+	--color-gray-800: rgb(226 232 240);
+	--color-gray-700: rgb(203 213 225);
+	--color-gray-600: rgb(148 163 184);
+	--color-gray-500: rgb(100 116 139);
+	--color-gray-400: rgb(99 113 133);
+
+	/* Shadows stronger on dark */
+	--shadow-md: 0 8px 20px rgba(0,0,0,0.55);
+	--shadow-lg: 0 16px 40px rgba(0,0,0,0.6);
+}
+/* Ensure text switches cleanly in dark mode (high-specificity overrides) */
+.dark,
+.dark body {
+    color: var(--color-gray-800); /* light text in dark mode */
+}
+
+/* Apply to common text elements with higher specificity to override earlier rules
+   Note: intentionally exclude <button> and <a> so buttons and links can keep their component-specific colors */
+.dark p,
+.dark li,
+.dark span,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6,
+.dark label,
+.dark input,
+.dark textarea,
+.dark summary,
+.dark dt,
+.dark dd {
+    color: var(--color-gray-800) !important;
+}
+
+/* Links should remain accessible and visible for non-button anchors */
+.dark a:not([class*="button"]) {
+    color: var(--color-blue-500) !important;
+}
+
+/* Ensure elements styled as buttons keep readable text in dark mode */
+.dark .button,
+.dark a[class*="button"],
+.dark button[class*="button"] {
+    color: var(--color-white) !important;
+}
+
+/* Make the "gray" buttons readable in dark mode (e.g. Back to games) */
+.dark .button-gray {
+    background-color: var(--bg-gray-300);
+    color: var(--color-white);
+}
+.dark .button-gray:hover {
+    background-color: var(--bg-gray-200);
+}
+
+/* Footer */
+.dark .footer {
+	background-color: #071025;
+	color: var(--color-white);
+}
+
+/* Buttons: keep blue accessible on dark */
+.dark .button-blue {
+	background-color: var(--bg-blue-500);
+	color: var(--color-white);
+}
+.dark .button-blue:hover {
+	background-color: var(--bg-blue-600);
+}
+
+/* Links and text adjustments inside cards/sections */
+.dark .game-card__content--heading,
+.dark .info-card__content--heading,
+.dark .values-card__content--heading,
+.dark .footer__--heading,
+.dark .reviews__name {
+	color: var(--color-white);
+}
+.dark .game-card__content--desc,
+.dark .info-card__content--desc,
+.dark .values-card__content--desc,
+.dark .footer__about--desc,
+.dark .color-gray-400 {
+	color: var(--color-gray-600);
+}
+
+/* Floating hamburger / menu contrast in dark mode (fine tuning) */
+.dark .floating-hamburger {
+	background-color: rgba(255,255,255,0.04);
+	border-color: rgba(255,255,255,0.06);
+}
+.dark .floating-hamburger__img {
+	filter: invert(1) brightness(1.2);
+}
+.dark .floating-menu {
+	background-color: rgba(6, 8, 12, 0.6);
+	border-color: rgba(255,255,255,0.06);
 }

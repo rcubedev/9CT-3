@@ -6,6 +6,18 @@
         <title>[placeholder: company name]</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Apply persisted dark mode early to avoid flash -->
+        <script>
+            (function(){
+                try {
+                    if (localStorage.getItem('site-dark-mode') === '1') {
+                        document.documentElement.classList.add('dark');
+                    }
+                } catch (e) { /* ignore storage errors */ }
+            })();
+        </script>
+
         <!-- <link rel="stylesheet" href="./assets/fonts/font-awesome/css/fontawesome.min.css"> -->
         <link rel="stylesheet" href="./assets/fonts/font-awesome/css/all.min.css">
         <!-- <link rel="stylesheet" href="./assets/fonts/font-awesome/css/brands.min.css"> -->
@@ -45,6 +57,29 @@
             </div>
         </nav>
 
+        <!-- Floating hamburger (always visible bottom-right) -->
+        <button class="mobile-menu-button floating-hamburger" aria-expanded="false" aria-controls="floating-menu" aria-label="Open menu">
+            <img class="floating-hamburger__img" src="./assets/img/ico/hamburger.svg" alt="menu">
+        </button>
+
+        <!-- Floating expanded menu -->
+        <div id="floating-menu" class="floating-menu" aria-hidden="true">
+            <div class="floating-menu__panel" role="menu" aria-labelledby="floating-menu">
+                <div class="floating-menu__items">
+                    <label class="floating-menu__item" for="dark-toggle">
+                        <span class="floating-menu__label">Dark mode</span>
+                        <span class="switch">
+                            <input id="dark-toggle" type="checkbox" aria-label="Toggle dark mode">
+                            <span class="switch__slider" aria-hidden="true"></span>
+                        </span>
+                    </label>
+
+                    <a class="floating-menu__item" href="#games" role="menuitem">See games</a>
+                    <a class="floating-menu__item" href="#faq" role="menuitem">FAQ</a>
+                </div>
+            </div>
+        </div>
+
         <main class="page fade-in">
             <!-- <section class="heading">
                 <h1 class="heading--heading">Welcome to [placeholder: company name]</h1>
@@ -54,8 +89,7 @@
             <section class="hero">
                 <h1 class="hero__heading">Gaming, evolved.</h1>
                 <p class="hero__desc">
-                    We create immersive gaming experiences that push the boundaries of technology and creativity.
-                </p>
+                    Creating immersive gaming experiences that push the boundaries of technology and creativity.
                 <div class="hero__buttons">
                     <a href="#[placeholder: link]" class="button button-blue hero__buttons--button">[placeholder]</a>
                     <a href="#games" class="button button-blue hero__buttons--button">See All Games</a>
@@ -166,5 +200,6 @@
         <script src="./assets/scripts/mobile-menu.js" async defer></script>
         <script src="./assets/scripts/fade-in.js" async defer></script>
         <script src="./assets/scripts/newsletter.js" defer></script>
+        <script src="./assets/scripts/floating-menu.js" defer></script>
     </body>
-</html> 
+</html>

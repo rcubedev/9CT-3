@@ -698,6 +698,7 @@
 
 	/* Text colors (light on dark) */
 	--color-white: rgb(255 255 255);
+    --color-gray-900: rgb(210, 216, 224);
 	--color-gray-800: rgb(200, 205, 210);
 	--color-gray-700: rgb(175, 183, 193);
 	--color-gray-600: rgb(148 163 184);

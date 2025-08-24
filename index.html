@@ -6,6 +6,10 @@
         <title>[placeholder: company name]</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Early script loading -->
+        <script src="./assets/scripts/floating-menu/preload.js"></script>
+
         <!-- <link rel="stylesheet" href="./assets/fonts/font-awesome/css/fontawesome.min.css"> -->
         <link rel="stylesheet" href="./assets/fonts/font-awesome/css/all.min.css">
         <!-- <link rel="stylesheet" href="./assets/fonts/font-awesome/css/brands.min.css"> -->
@@ -118,7 +122,7 @@
                 <h2 class="section-blue--heading">Join Our Newsletter</h2>
                 <p class="section-blue--desc">Get early access to updates, receive playtest invites, and behind-the-scenes news from our dev team.</p>
                 <form class="newsletter">
-                    <input class="newsletter__input" name="email" type="email" autocomplete="email" placeholder="example@example.com">
+                    <input class="newsletter__input" name="email" type="email" autocomplete="email" placeholder="Email">
                     <button class="newsletter__button button button-blue" type="submit">
                         <span class="newsletter__button--logo fa-solid fa-envelope fa-width-auto"></span> Subscribe
                     </button>
@@ -159,8 +163,28 @@
             </div>
         </footer>
 
-        <script src="./assets/scripts/mobile-menu.js" async defer></script>
-        <script src="./assets/scripts/fade-in.js" async defer></script>
+        <!-- Floating menu button -->
+        <button class="floating-menu-button">
+            <img class="floating-menu-button__img" src="./assets/img/ico/hamburger.svg" alt="A hamburger menu icon, used to open the floating hamburger menu.">
+        </button>
+        <!-- Floating expanded menu -->
+        <div id="floating-menu" class="floating-menu">
+            <div class="floating-menu__panel">
+                <div class="floating-menu__items">
+                    <label class="floating-menu__item" for="dark-toggle">
+                        <span class="floating-menu__label">Dark mode</span>
+                        <span class="switch">
+                            <input id="dark-toggle" type="checkbox">
+                            <span class="switch__slider"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <script src="./assets/scripts/mobile-menu.js" defer></script>
+        <script src="./assets/scripts/fade-in.js" defer></script>
         <script src="./assets/scripts/newsletter.js" defer></script>
+        <script src="./assets/scripts/floating-menu/floating-menu.js" defer></script>
     </body>
 </html>

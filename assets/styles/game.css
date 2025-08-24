@@ -180,7 +180,7 @@
 }
 .popup--open .popup__window {
     animation:
-        250ms scale-in cubic-bezier(0.2, 0, 0, 1) forwards,
+        250ms scale-in-12 cubic-bezier(0.2, 0, 0, 1) forwards,
         250ms fade-in cubic-bezier(0.2, 0, 0, 1) forwards;
 }
 .popup--open .popup__title {
@@ -193,7 +193,8 @@
 }
 .popup--closing .popup__window {
     animation:
-        250ms scale-out cubic-bezier(0.2, 0, 0, 1) forwards,
+        250ms scale-out-12 cubic-bezier(0.2, 0, 0, 1) forwards,
+        250ms slide-down-12 cubic-bezier(0.2, 0, 0, 1) forwards,
         250ms fade-out cubic-bezier(0.2, 0, 0, 1) forwards;
 }
 .popup--closing .popup__title {

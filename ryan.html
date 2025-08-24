@@ -6,6 +6,10 @@
         <title>[placeholder: company name]</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Early script loading -->
+        <script src="./assets/scripts/floating-menu/preload.js"></script>
+
         <link rel="stylesheet" href="./assets/fonts/font-awesome/css/all.min.css">
         <link rel="stylesheet" href="./assets/styles/tailwind-recreate.css">
         <link rel="stylesheet" href="./assets/styles/main.css">
@@ -375,6 +379,25 @@
             </div>
         </footer>
 
+        <!-- Floating menu button -->
+        <button class="floating-menu-button">
+            <img class="floating-menu-button__img" src="./assets/img/ico/hamburger.svg" alt="A hamburger menu icon, used to open the floating hamburger menu.">
+        </button>
+        <!-- Floating expanded menu -->
+        <div id="floating-menu" class="floating-menu">
+            <div class="floating-menu__panel">
+                <div class="floating-menu__items">
+                    <label class="floating-menu__item" for="dark-toggle">
+                        <span class="floating-menu__label">Dark mode</span>
+                        <span class="switch">
+                            <input id="dark-toggle" type="checkbox">
+                            <span class="switch__slider"></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
         <!-- Game popup -->
         <div class="popup">
             <div class="popup__overlay"></div>
@@ -402,5 +425,6 @@
         <script src="./assets/scripts/dropdowns.js" defer></script>
         <script src="./assets/scripts/carousel.js" defer></script>
         <script src="./assets/scripts/popup.js" defer></script>
+        <script src="./assets/scripts/floating-menu/floating-menu.js" defer></script>
     </body>
 </html>

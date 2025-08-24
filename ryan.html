@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>[placeholder: company name]</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./assets/fonts/font-awesome/css/all.min.css">
+        <link rel="stylesheet" href="./assets/styles/tailwind-recreate.css">
+        <link rel="stylesheet" href="./assets/styles/main.css">
+        <link rel="stylesheet" href="./assets/styles/game.css">
+    </head>
+    <body class="bg-gray-50">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav__container">
+                <a href="./index.html" class="nav__logo">
+                    <span class="nav__logo--img fa-solid fa-gamepad"></span>
+                    <span class="nav__logo--text">[placeholder]</span>
+                </a>
+                <!-- Desktop (>=768px) -->
+                <div class="nav__primary">
+                    <a href="./index.html" class="nav__primary--link nav-link">Home</a>
+                    <a href="#" class="nav__primary--link nav-link active">Digital Crisis Simulator</a>
+                    <a href="./sanji.html" class="nav__primary--link nav-link">Younger Ring</a>
+                    <a href="./hansilu.html" class="nav__primary--link nav-link">Space Age</a>
+                </div>
+                <!-- button for mobile -->
+                <div class="nav__mobile-button">
+                    <button class="mobile-menu-button nav__mobile-button__button">
+                        <img class="nav__mobile-button__button--img" src="./assets/img/ico/hamburger.svg">
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile-menu medium:hidden hidden">
+                <ul>
+                    <li><a href="./index.html" class="nav__mobile-menu--link">Home</a></li>
+                    <li><a href="#" class="nav__mobile-menu--link active">Digital Crisis Simulator</a></li>
+                    <li><a href="./sanji.html" class="nav__mobile-menu--link">Younger Ring</a></li>
+                    <li><a href="./hansilu.html" class="nav__mobile-menu--link">Space Age</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="page fade-in">
+            <section class="hero">
+                <div>
+                    <h1 class="hero__heading">Digital Crisis Simulator</h1>
+                    <p class="hero__desc">
+                        Race against the clock in a faithful 1990s desktop: pop&#8209ups, and deceptive dialogs flood the screen. Stop the threats before they execute - act fast and choose carefully to avoid a total system meltdown.
+                    </p>
+                    <div class="hero__buttons">
+                        <button class="button button-blue hero__buttons--button" id="play">Play</button>
+                        <a href="#faq" class="button button-blue hero__buttons--button">FAQ</a>
+                        <a href="./index.html#games" class="button button-gray hero__buttons--button">Back to games</a>
+                    </div>
+                </div>
+                <img src="./assets/img/ryan/hero.png" alt="An image of the game, Digital Crisis Simulator, being played" class="width-full height-64 object-cover round-lg">
+            </section>
+
+            <section class="info">
+                <div class="info-container">
+                    <div class="info-card card-anim">
+                        <div class="info-card__content">
+                            <h3 class="info-card__content--heading"><span class="info-card__content--img fa-solid fa-book-open fa-width-auto"></span>Overview</h3>
+                            <p class="info-card__content--desc">
+                                Threats appear as windows or dialogs. Some mimic legitimate programs and require careful judgement.
+                                Make sure to quickly block threats before they "execute". The longer you take, the more your system instability increases;
+                                let it reach the limit and the game ends with a BSOD.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-card card-anim">
+                        <div class="info-card__content">
+                            <h3 class="info-card__content--heading"><span class="info-card__content--img fa-solid fa-graduation-cap fa-width-auto"></span>Educational Content</h3>
+                            <p class="info-card__content--desc">
+                                This game teaches players to identify and respond to common cybersecurity threats through
+                                interactive challenges. By simulating viruses, phishing emails, and malware in a retro desktop
+                                environment, players learn to spot red flags, understand malware types, and practice safe
+                                digital behaviour.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="screenshots">
+                <h1 class="screenshots__header">Screenshots</h1>
+                <div class="screenshots-container">
+                    <div class="screenshots-card">
+                        <img src="./assets/img/ryan/w95_loading.png" alt="Game loading screen, Windows 95" class="width-full height-64 object-cover round-lg">
+                    </div>
+                    <div class="screenshots-card">
+                        <img src="./assets/img/ryan/game_start.png" alt="Game begin screen" class="width-full height-64 object-cover round-lg">
+                    </div>
+                    <div class="screenshots-card">
+                        <img src="./assets/img/ryan/lose.png" alt="Game over screen" class="width-full height-64 object-cover round-lg">
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews">
+                <h1 class="reviews__header">Reviews</h1>
+
+                <div class="reviews__wrapper">
+                    <div class="reviews__slider carousel" tabindex="0">
+                        <ul class="reviews__track carousel__track">
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"Screw this game! I hate it so much! The creator should die in a hole right now! It's so buggy, it's so bad. Potentially because I installed mods, but that is YOUR problem!!"</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Denial &#1071.</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">5/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"Limiting customization options. I wanted my character to look better than me in real life, but that's not possible. Didn't even play the game."</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Nicholas Baron</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">1/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"This game… um… its narrative was very intriguing through its excellent character development and beautifully illustrated setting."</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Rafan Ahmed</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">4/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"This was the greatest game I have ever played. I am eagerly awaiting the sequel!"</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Steven Barclay</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">5/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"This game is the best game to ever exist! Everyone should play this game immediately, you will have a great time!"</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Ryan Bajimaya</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">5/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"Greatest game on Earth. 10/10, would play again. It's amazing how it's free!"</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Hansilu J.</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">2/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"My grandma could make a better game."</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Nicholas Baron</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">5/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"Amazing quality! Great sounds, pumps me full with adrenaline. Would recommend. 10/10"</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Veer Galrani</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">5/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"Liked the reference to YouAreAnIdiot."</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Brendan Pham</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">3/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"The game could honestly be more optimized, and low-key it's kind of mid."</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Nishal Soudam</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">4/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"I thought I had an actual virus on my computer because of how realistically virus-like it was."</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Gabriel Zay</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">2/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"The game's alright just low-key kinda got boring after a while"</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Dim Singh</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">4/5</span>
+                                </div>
+                            </li>
+
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"Mid game."</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Chance</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">3/5</span>
+                                </div>
+                            </li>
+                            <li class="reviews__card">
+                                <div class="reviews__quote"><p>"yo... i was joking lol"</p></div>
+                                <div class="reviews__meta">
+                                    <span class="reviews__name">Chance</span>
+                                    <span class="reviews__rating">
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="reviews__rating--positive fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                        <span class="fa-solid fa-star"></span>
+                                    </span>
+                                    <span class="reviews__rating-number">2/5</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="reviews__dots carousel__dots">
+                        <!-- Generated by JS -->
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq" id="faq">
+                <h1 class="faq__header">Frequently Asked Questions</h1>
+                <div class="dropdown faq__question">
+                    <details class="dropdown__details">
+                        <summary class="dropdown__details--summary">
+                            <span class="dropdown__details--heading">How do I make the game run better?</span>
+                        </summary>
+                    </details>
+                    <div class="dropdown__content">
+                        <p>
+                            Make sure to use TurboWarp, and enable Turbo mode and 60 FPS mode! You can do this by holding &#8679 Shift + &#9095 Alt (&#8679 Shift + &#8997 Option on Mac) when clicking the green flag. This will ensure the game runs as smoothly as possible. Also try closing other tabs/programs, and enabling hardware acceleration in your browser.
+                        </p>
+                    </div>
+                </div>
+                <div class="dropdown faq__question">
+                    <details class="dropdown__details">
+                        <summary class="dropdown__details--summary">
+                            <span class="dropdown__details--heading">What are the controls?</span>
+                        </summary>
+                    </details>
+                    <div class="dropdown__content">
+                        <p>
+                            Actions are mouse-driven - use the mouse to identify the threats.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__about">
+                    <h3 class="footer__--heading">[placeholder]</h3>
+                    <p class="footer__about--desc">[placeholder]</p>
+                </div>
+                <div class="footer__links">
+                    <h3 class="footer__--heading">Quick Links</h3>
+                    <ul class="footer__links--list">
+                        <li><a href="./index.html" class="links__list--link">Home</a></li>
+                        <li><a href="#" class="links__list--link">Digital Crisis Simulator</a></li>
+                        <li><a href="./sanji.html" class="links__list--link">Younger Ring</a></li>
+                        <li><a href="./hansilu.html" class="links__list--link">Space Age</a></li>
+                    </ul>
+                </div>
+                <div class="footer__contact">
+                    <h3 class="footer__--heading">Contact</h3>
+                    <p class="color-gray-400 margin_bottom-2">1 [placeholder] Street, Sydney NSW 2000</p>
+                    <p class="color-gray-400 margin_bottom-2">Phone: (00) 0000 0000</p>
+                    <p class="color-gray-400">Email: [placeholder]@example.com</p>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© [placeholder: company name]. All rights reserved.</p>
+                <div class="footer__bottom--links">
+                    <a href="#[placeholder: link]" class="links__list--link"><span class="fa-brands fa-facebook-f fa-width-auto"></span></a>
+                    <a href="#[placeholder: link]" class="links__list--link"><span class="fa-brands fa-twitter fa-width-auto"></span></a>
+                    <a href="#[placeholder: link]" class="links__list--link"><span class="fa-brands fa-instagram fa-width-auto"></span></a>
+                    <a href="#[placeholder: link]" class="links__list--link"><span class="fa-brands fa-youtube fa-width-auto"></span></a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Game popup -->
+        <div class="popup">
+            <div class="popup__overlay"></div>
+            <div class="popup__window">
+                <h2 class="popup__title">[placeholder: game name]
+                    <button class="popup__close">
+                        <span class="fa-solid fa-xmark fa-width-auto"></span>
+                    </button>
+                </h2>
+                <div class="popup__body">
+                    <iframe
+                        data-src="https://turbowarp.org/1177936146/embed?fps=60&turbo"
+                        src=""
+                        allowtransparency="true"
+                        frameborder="0"
+                        scrolling="no"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+        <script src="./assets/scripts/mobile-menu.js" defer></script>
+        <script src="./assets/scripts/fade-in.js" defer></script>
+        <script src="./assets/scripts/dropdowns.js" defer></script>
+        <script src="./assets/scripts/carousel.js" defer></script>
+        <script src="./assets/scripts/popup.js" defer></script>
+    </body>
+</html>

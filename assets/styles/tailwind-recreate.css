@@ -90,6 +90,7 @@
     --width-2: calc(var(--unit-rem) * 2); /* needs class */
     --width-6: calc(var(--unit-rem) * 6);
     --width-full: var(--unit-full);
+    --width-auto: var(--unit-auto);
 
     
     --max-width-4xl: 56rem; /* needs changing from unit to container var */
@@ -392,6 +393,9 @@ body {
     }
     .height-64 {
         height: var(--height-64);
+    }
+    .height-auto {
+        height: var(--height-auto);
     }
 
 /* Width */

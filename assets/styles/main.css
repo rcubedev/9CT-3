@@ -284,7 +284,12 @@
 }
 .newsletter {
     display: var(--flex);
+    flex-direction: var(--flex-col);
     gap: var(--gap-3);
+    @media screen and (min-width: 768px) {
+        flex-direction: var(--flex-row);
+        align-items: var(--items-center);
+    }
 }
 .newsletter__input {
     flex: 1;

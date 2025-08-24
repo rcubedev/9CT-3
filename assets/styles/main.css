@@ -94,7 +94,7 @@
 
 /* Nav */
 .nav {
-    background-color: var(--color-white);
+    background-color: var(--bg-white);
     box-shadow: var(--shadow-lg);
     position: var(--sticky);
     top: var(--top-0);

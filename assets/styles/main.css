@@ -969,6 +969,7 @@ video {
     --color-gray-600: rgb(148 163 184);
     --color-gray-500: rgb(100 116 139);
     --color-gray-400: rgb(99 113 133);
+    --color-gray-300: rgb(90, 100, 115);
     --color-gray-200: rgb(88, 92, 97);
 
     /* Shadows stronger on dark */

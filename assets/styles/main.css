@@ -254,6 +254,9 @@
 .game-card__content--link {
     color: var(--color-blue-500);
     font-weight: var(--font-medium);
+    transition-property: var(--transition_property);
+    transition-timing-function: var(--transition_timing_function);
+    transition-duration: var(--duration-300);
 }
 .game-card__content--link:hover {
     color: var(--color-blue-700);

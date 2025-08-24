@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>[placeholder: company name]</title>
+        <title>Hansilu, Inc.</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,28 +34,20 @@
                 </a>
                 <!-- Desktop (>=768px) -->
                 <div class="nav__primary">
-                    <a href="#" class="nav__primary--link nav-link active">Home</a> <!-- Change href to ./index.html if not on main page. -->
+                    <a href="#" class="nav__primary--link nav-link active">Home</a>
                     <a href="#[placeholder: link]" class="nav__primary--link nav-link">[placeholder]</a>
                     <a href="#[placeholder: link]" class="nav__primary--link nav-link">[placeholder]</a>
                     <a href="#[placeholder: link]" class="nav__primary--link nav-link">[placeholder]</a>
                 </div>
-                <!-- button for mobile -->
-                <div class="nav__mobile-button">
-                    <button class="mobile-menu-button nav__mobile-button__button">
-                        <img class="nav__mobile-button__button--img" src="./assets/img/ico/hamburger.svg">
-                    </button>
-                </div>
-            </div>
-            <!-- Mobile -->
-            <div class="mobile-menu medium:hidden hidden">
-                <ul>
-                    <li><a href="#[placeholder: link]" class="nav__mobile-menu--link active">Home</a></li>
-                    <li><a href="#[placeholder: link]" class="nav__mobile-menu--link">[placeholder]</a></li>
-                    <li><a href="#[placeholder: link]" class="nav__mobile-menu--link">[placeholder]</a></li>
-                    <li><a href="#[placeholder: link]" class="nav__mobile-menu--link">[placeholder]</a></li>
-                </ul>
-            </div>
-        </nav>
+                 <!-- button for mobile -->
+                 <div class="nav__mobile-button">
+                     <button class="mobile-menu-button nav__mobile-button__button">
+                         <img class="nav__mobile-button__button--img" src="./assets/img/ico/hamburger.svg">
+                     </button>
+                 </div>
+             </div>
+            <!-- mobile-menu removed: navigation now lives inside the floating menu on mobile only -->
+         </nav>
 
         <!-- Floating hamburger (always visible bottom-right) -->
         <button class="mobile-menu-button floating-hamburger" aria-expanded="false" aria-controls="floating-menu" aria-label="Open menu">
@@ -66,23 +58,32 @@
         <div id="floating-menu" class="floating-menu" aria-hidden="true">
             <div class="floating-menu__panel" role="menu" aria-labelledby="floating-menu">
                 <div class="floating-menu__items">
-                    <label class="floating-menu__item" for="dark-toggle">
-                        <span class="floating-menu__label">Dark mode</span>
-                        <span class="switch">
-                            <input id="dark-toggle" type="checkbox" aria-label="Toggle dark mode">
-                            <span class="switch__slider" aria-hidden="true"></span>
-                        </span>
-                    </label>
+                    <!-- primary navigation links (mobile only) -->
+                    <div class="floating-menu__nav">
+                        <a class="floating-menu__item" href="#" role="menuitem">Home</a>
+                        <a class="floating-menu__item" href="#[placeholder: link]" role="menuitem">[placeholder]</a>
+                        <a class="floating-menu__item" href="#[placeholder: link]" role="menuitem">[placeholder]</a>
+                        <a class="floating-menu__item" href="#[placeholder: link]" role="menuitem">[placeholder]</a>
+                    </div>
 
-                    <a class="floating-menu__item" href="#games" role="menuitem">See games</a>
-                    <a class="floating-menu__item" href="#faq" role="menuitem">FAQ</a>
-                </div>
-            </div>
-        </div>
+                     <!-- dark mode toggle -->
+                     <label class="floating-menu__item" for="dark-toggle">
+                         <span class="floating-menu__label">Dark mode</span>
+                         <span class="switch">
+                             <input id="dark-toggle" type="checkbox" aria-label="Toggle dark mode">
+                             <span class="switch__slider" aria-hidden="true"></span>
+                         </span>
+                     </label>
 
-        <main class="page fade-in">
+                     <a class="floating-menu__item" href="#games" role="menuitem">See games</a>
+                     <a class="floating-menu__item" href="#faq" role="menuitem">FAQ</a>
+                 </div>
+             </div>
+         </div>
+
+         <main class="page fade-in">
             <!-- <section class="heading">
-                <h1 class="heading--heading">Welcome to [placeholder: company name]</h1>
+                <h1 class="heading--heading">Welcome to Hansilu, Inc.</h1>
                 <p class="heading--desc">[placeholder: description]</p>
             </section> -->
 
@@ -168,8 +169,8 @@
         <footer class="footer">
             <div class="footer__container">
                 <div class="footer__about">
-                    <h3 class="footer__--heading">[placeholder]</h3>
-                    <p class="footer__about--desc">[placeholder]</p>
+                    <h3 class="footer__--heading">Hansilu, Inc.</h3>
+                    <p class="footer__about--desc">We are dedicated to creating immersive gaming experiences that captivate players around the world.</p>
                 </div>
                 <div class="footer__links">
                     <h3 class="footer__--heading">Quick Links</h3>
@@ -188,7 +189,7 @@
                 </div>
             </div>
             <div class="footer__bottom">
-                <p>© [placeholder: company name]. All rights reserved.</p>
+                <p>© Hansilu, Inc.. All rights reserved.</p>
                 <div class="footer__bottom--links">
                     <a href="#[placeholder: link]" class="links__list--link"><span class="fa-brands fa-facebook-f fa-width-auto"></span></a>
                     <a href="#[placeholder: link]" class="links__list--link"><span class="fa-brands fa-twitter fa-width-auto"></span></a>

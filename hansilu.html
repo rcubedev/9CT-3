@@ -33,27 +33,13 @@
                 </a>
                 <!-- Desktop (>=768px) -->
                 <div class="nav__primary">
-                    <a href="./index.html" class="nav__primary--link nav-link active">Home</a> <!-- Change href to # for this page, move active class -->
+                    <a href="./index.html" class="nav__primary--link nav-link active">Home</a>
                     <a href="#[placeholder: link]" class="nav__primary--link nav-link">[placeholder]</a>
                     <a href="#[placeholder: link]" class="nav__primary--link nav-link">[placeholder]</a>
                     <a href="#[placeholder: link]" class="nav__primary--link nav-link">[placeholder]</a>
                 </div>
-                <!-- button for mobile -->
-                <div class="nav__mobile-button">
-                    <button class="mobile-menu-button nav__mobile-button__button">
-                        <img class="nav__mobile-button__button--img" src="./assets/img/ico/hamburger.svg">
-                    </button>
-                </div>
-            </div>
-            <!-- Mobile -->
-            <div class="mobile-menu medium:hidden hidden">
-                <ul>
-                    <li><a href="./index.html" class="nav__mobile-menu--link active">Home</a></li> <!-- Change href to # for this page, move active-mobile class -->
-                    <li><a href="#[placeholder: link]" class="nav__mobile-menu--link">[placeholder]</a></li>
-                    <li><a href="#[placeholder: link]" class="nav__mobile-menu--link">[placeholder]</a></li>
-                    <li><a href="#[placeholder: link]" class="nav__mobile-menu--link">[placeholder]</a></li>
-                </ul>
-            </div>
+             </div>
+            <!-- mobile-menu removed: navigation now lives inside the floating menu on mobile only -->
         </nav>
 
         <!-- Floating hamburger (always visible bottom-right) -->
@@ -65,21 +51,30 @@
         <div id="floating-menu" class="floating-menu" aria-hidden="true">
             <div class="floating-menu__panel" role="menu" aria-labelledby="floating-menu">
                 <div class="floating-menu__items">
-                    <label class="floating-menu__item" for="dark-toggle">
-                        <span class="floating-menu__label">Dark mode</span>
-                        <span class="switch">
-                            <input id="dark-toggle" type="checkbox" aria-label="Toggle dark mode">
-                            <span class="switch__slider" aria-hidden="true"></span>
-                        </span>
-                    </label>
+                    <!-- primary navigation links (mobile only) -->
+                    <div class="floating-menu__nav">
+                        <a class="floating-menu__item" href="./index.html" role="menuitem">Home</a>
+                        <a class="floating-menu__item" href="#[placeholder: link]" role="menuitem">[placeholder]</a>
+                        <a class="floating-menu__item" href="#[placeholder: link]" role="menuitem">[placeholder]</a>
+                        <a class="floating-menu__item" href="#[placeholder: link]" role="menuitem">[placeholder]</a>
+                    </div>
 
-                    <a class="floating-menu__item" href="#games" role="menuitem">See games</a>
-                    <a class="floating-menu__item" href="#faq" role="menuitem">FAQ</a>
-                </div>
-            </div>
-        </div>
+                     <!-- dark mode toggle -->
+                     <label class="floating-menu__item" for="dark-toggle">
+                         <span class="floating-menu__label">Dark mode</span>
+                         <span class="switch">
+                             <input id="dark-toggle" type="checkbox" aria-label="Toggle dark mode">
+                             <span class="switch__slider" aria-hidden="true"></span>
+                         </span>
+                     </label>
 
-        <main class="page fade-in">
+                     <a class="floating-menu__item" href="#games" role="menuitem">See games</a>
+                     <a class="floating-menu__item" href="#faq" role="menuitem">FAQ</a>
+                 </div>
+             </div>
+         </div>
+
+         <main class="page fade-in">
             <section class="hero">
                 <div>
                     <h1 class="hero__heading">SPACE AGE</h1>

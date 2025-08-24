@@ -318,9 +318,6 @@
     padding-left: calc(var(--pad-1) * 7);
     padding-right: calc(var(--pad-1) * 7);
 }
-.newsletter__button--logo {
-    margin-right: var(--margin_right-2);
-}
 
 /* Footer */
 .footer {
@@ -559,7 +556,7 @@
     color: var(--color-gray-600);
 }
 
-/* Floating hamburger button (always bottom-right) - default transparent, expand on hover/open */
+/* Floating hamburger button (always bottom-right) - default transparent, expand on hover */
 .floating-hamburger {
     position: fixed;
     right: 1rem;
@@ -850,4 +847,53 @@
 .dark .floating-menu {
 	background-color: rgba(6, 8, 12, 0.6);
 	border-color: rgba(255,255,255,0.06);
+}
+
+/* keep floating menu's primary nav visible only on small screens */
+.floating-menu__nav {
+    display: block;
+}
+@media screen and (min-width: 768px) {
+    .floating-menu__nav {
+        display: none !important;
+    }
+}
+
+/* Make the newsletter panel match dark theme surfaces */
+.dark .section-blue {
+    /* use the darker surface used elsewhere for cards */
+    background-color: var(--bg-gray-100);
+    border: 1px solid rgba(255,255,255,0.04);
+    color: var(--color-gray-800);
+}
+
+.dark .section-blue--heading {
+    color: var(--color-white) !important;
+    opacity: 0.98;
+}
+
+.dark .section-blue--desc {
+    color: var(--color-gray-600) !important;
+}
+
+/* Inputs & button in the newsletter when dark */
+.dark .section-blue .newsletter__input {
+    background-color: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    color: var(--color-gray-800);
+}
+
+.dark .section-blue .newsletter__input::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.dark .section-blue .newsletter__button {
+    background-color: var(--bg-blue-500);
+    color: var(--color-white);
+    box-shadow: 0 8px 20px rgba(2,6,23,0.45);
+}
+
+/* ensure the panel keeps its rounded card look in dark mode */
+.dark .section-blue {
+    box-shadow: var(--shadow-lg);
 }

@@ -1,6 +1,7 @@
 (function () {
     document.addEventListener('DOMContentLoaded', function () {
-        var toggleButtons = Array.prototype.slice.call(document.querySelectorAll('.floating-hamburger'));
+        // include the top nav mobile button so it toggles the floating menu on mobile
+        var toggleButtons = Array.prototype.slice.call(document.querySelectorAll('.floating-hamburger, .nav__mobile-button__button'));
         var menu = document.getElementById('floating-menu');
         var darkToggle = document.getElementById('dark-toggle');
         var closeDelay = 250;
